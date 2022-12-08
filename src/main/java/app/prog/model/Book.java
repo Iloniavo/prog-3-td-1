@@ -29,7 +29,6 @@ public class Book {
     private String title;
     private String author;
     private Integer pageNumber;
-    @CreationTimestamp
     private LocalDate releaseDate;
 
     public boolean hasAuthor() {
