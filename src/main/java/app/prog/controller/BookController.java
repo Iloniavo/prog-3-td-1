@@ -24,7 +24,7 @@ public class BookController {
                 .toList();
     }
 
-    //TODO: This endpoint does not match with our API. Resolve it in the question-1.
+
     @PostMapping("/books")
     public List<BookResponse> createBooks(@RequestBody List<BookRequest> toCreate) {
         return service.createBooks(
@@ -34,7 +34,6 @@ public class BookController {
                     .toList();
     }
 
-    //TODO: This endpoint does not match with our API. Resolve it in the question-2-ii.
     @PutMapping("/books")
     public List<BookResponse> updateBooks(@RequestBody List<BookUpdate> toUpdate) {
         return service.updateBooks(toUpdate.stream().map(mapper::toUpdate).toList()).stream()
