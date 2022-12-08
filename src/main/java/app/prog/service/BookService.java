@@ -3,7 +3,9 @@ package app.prog.service;
 import app.prog.model.Book;
 import app.prog.repository.BookRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,7 +42,7 @@ public class BookService {
     }
 
     //TODO-3: should I use Integer here or int ? Why ?
-    public Book deleteBook(int bookId) {
+    public Book deleteBook(Integer bookId) {
         /*
         TIPS: From the API, the Class Optional<T> is :
         A container object which may or may not contain a non-null value.
@@ -62,7 +64,7 @@ public class BookService {
         Link 1 : https://www.baeldung.com/spring-response-entity
         Link 2 : https://www.baeldung.com/exception-handling-for-rest-with-spring
          */
-            throw new RuntimeException("Book." + bookId + " not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
     public Book getBookById(Integer id){
