@@ -23,7 +23,9 @@ public class BookService {
     Therefore, the pageNumber and the releaseDate exists also in the Book model.
     A solution to create a book without the ID, the pageNumber and the releaseDate ?
      */
-    public List<Book> createBooks(List<Book> toCreate) {
+    public List<Book
+            > createBooks(List<Book> toCreate) {
+
         return repository.saveAll(toCreate);
     }
 
